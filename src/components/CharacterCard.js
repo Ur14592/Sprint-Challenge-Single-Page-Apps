@@ -36,12 +36,19 @@ const Div = styled.div `
   
   margin-bottom: 20px;
 `;
+const CardImg = styled.img`
+  width: 200px;
+  height: 200px;
+  object-fit: scale;
+  flex-shrink: 2;
+`;
 
 const CharacterCard = (props) => {
   return(
 
   <Container>
-    <Div className="Key " key={props.key}>
+    <Div >
+      <CardImg className="characterimg" alt="character" src={props.image}  />
       <CardTitle>Name: {props.name}</CardTitle>
       <Status>Status: {props.status}</Status>
       <Species>Species: {props.species}</Species>

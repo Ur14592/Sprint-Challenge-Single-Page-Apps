@@ -15,9 +15,11 @@ const CharacterList=()=> {
     //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
 
 const getList = () => {
-  axios .get ("https://rickandmortyapi.com/api/character/") .then(response => {
+  axios 
+  .get ("https://rickandmortyapi.com/api/character/") 
+  .then(response => {
     const list = response.data.results;
-    console.log("Character Date", response.data.results);
+    // console.log("Character Date", response.data.results);
     setList(list);
   })
 };
