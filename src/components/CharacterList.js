@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
+import styled from 'styled-components';
 
 
 
@@ -23,13 +24,34 @@ const getList = () => {
 getList();
   }, []);
 
+
+
+  const Div = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap:nowrap;
+  padding:1.5rem;
+  background:#5D4B43;
+`;
+
   return (
-    <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
+    <div className="character-list">
+      <Div>
       {list.map(character => {
-        return
+        return(
+          <CharacterCard 
+          key={character.id}
+          image={character.image}
+          name={character.name}
+          status={character.status}
+          species={character.species}
+          />
+        )
       })}
-    </section>
+      </Div>
+    </div>
   );
 }
 
