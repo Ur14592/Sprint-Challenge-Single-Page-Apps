@@ -9,19 +9,21 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  flex-wrap:wrap;
-  padding:1.5rem;
-  background:#5D4B43;
+  padding:1rem;
+  background:white;
 `;
 export default function App() {
+  
+
   return (
-    <div>
+    <main>
     <Header />
     <Div>
-      <CharacterList/>
+      {/* <CharacterList/> */}
+      {/* <input name="filter" value={filter} onChange={filterChanges}></input> */}
       <Route exact path="/" component={WelcomePage} />
-      <Route path="/characters" component={CharacterList} />
+      <Route path="/characters" component={CharacterList}/>
     </Div>
-    </div>
+    </main>
   );
 }

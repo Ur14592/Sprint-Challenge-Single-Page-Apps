@@ -4,9 +4,8 @@ import styled from 'styled-components';
 
 
 const CardTitle = styled.h2`
-  color: #1C59B8;
-  border-top:1rem solid #0075F2;
-  text-shadow:6px 6px  #444
+  color: black;
+  border-bottom:1rem solid yellow;
   &:hover {
     transform: translateY(-5px) scale(1.3);
     color: #00F2F2;
@@ -26,34 +25,33 @@ const Species = styled.p`
     color: #000000;
   }
 `;
-const Container = styled.div`
-width:44rem;
-`;
-const Div = styled.div `
 
+const Div = styled.div `
+  
   width: 140px;
   max-height: 400px;
-  
   margin-bottom: 20px;
+  
 `;
 const CardImg = styled.img`
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 250px;
   object-fit: scale;
   flex-shrink: 2;
+  &:hover {
+    transform: translateY(-5px) scale(1.1);
+  }
 `;
 
 const CharacterCard = (props) => {
   return(
 
-  <Container>
     <Div >
       <CardImg className="characterimg" alt="character" src={props.image}  />
       <CardTitle>Name: {props.name}</CardTitle>
       <Status>Status: {props.status}</Status>
       <Species>Species: {props.species}</Species>
   </Div>
-  </Container>
   )
 };
 
